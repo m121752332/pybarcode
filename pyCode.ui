@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Tiger</author>
+ <class>pyCode</class>
+ <widget class="QMainWindow" name="pyCode">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>912</width>
+    <height>612</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BarCode產生器</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pyCode.qrc">
+    <normaloff>:/pic/icon/logo.jpg</normaloff>:/pic/icon/logo.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,3">
+           <item>
+            <widget class="QGroupBox" name="gbox1">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>微軟正黑體</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="title">
+              <string>產生Barcode小工具</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="label1">
+                    <property name="text">
+                     <string>輸入內容：</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="codeword">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="1">
+               <widget class="QGroupBox" name="groupBox_2">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>產生圖檔選擇</string>
+                </property>
+                <property name="flat">
+                 <bool>false</bool>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,1">
+                 <property name="spacing">
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QRadioButton" name="code39">
+                   <property name="text">
+                    <string>Code39</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="code128">
+                   <property name="text">
+                    <string>Code128</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_2" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>60</height>
+              </size>
+             </property>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="image">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="pyCode.qrc">:/pic/temp/unnamed.jpg</pixmap>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item alignment="Qt::AlignTop">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+        </property>
+        <layout class="QFormLayout" name="formLayout_2">
+         <property name="labelAlignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="generate">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>產生</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="download">
+           <property name="text">
+            <string>儲存</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>912</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_1">
+    <property name="title">
+     <string>畫面</string>
+    </property>
+    <addaction name="help2"/>
+    <addaction name="about"/>
+    <addaction name="separator"/>
+    <addaction name="controlz"/>
+    <addaction name="separator"/>
+    <addaction name="exit2"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>編輯</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>資料</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>瀏覽</string>
+    </property>
+   </widget>
+   <addaction name="menu_1"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>WhatsThisCursor</cursorShape>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="lang"/>
+   <addaction name="separator"/>
+   <addaction name="editcopy"/>
+   <addaction name="editcut"/>
+   <addaction name="editpaste"/>
+   <addaction name="separator"/>
+   <addaction name="insert"/>
+   <addaction name="modify"/>
+   <addaction name="delete_2"/>
+   <addaction name="reproduce"/>
+   <addaction name="invalid"/>
+   <addaction name="separator"/>
+   <addaction name="detail"/>
+   <addaction name="separator"/>
+   <addaction name="printer"/>
+   <addaction name="exporttoexcel"/>
+   <addaction name="separator"/>
+   <addaction name="query"/>
+   <addaction name="separator"/>
+   <addaction name="first"/>
+   <addaction name="previous"/>
+   <addaction name="jump"/>
+   <addaction name="next"/>
+   <addaction name="last"/>
+   <addaction name="separator"/>
+   <addaction name="exit"/>
+  </widget>
+  <action name="lang">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/lingua.png</normaloff>:/pic/icon/lingua.png</iconset>
+   </property>
+   <property name="text">
+    <string>語言</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="editcopy">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/copy.png</normaloff>
+     <normalon>:/pic/icon/copy.png</normalon>:/pic/icon/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>資料複製</string>
+   </property>
+   <property name="toolTip">
+    <string>資料複製</string>
+   </property>
+  </action>
+  <action name="editcut">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/cut.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>資料剪下</string>
+   </property>
+   <property name="toolTip">
+    <string>資料剪下</string>
+   </property>
+  </action>
+  <action name="editpaste">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/paste.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>資料貼上</string>
+   </property>
+   <property name="toolTip">
+    <string>資料貼上</string>
+   </property>
+  </action>
+  <action name="insert">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/new.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>新增</string>
+   </property>
+   <property name="toolTip">
+    <string>[F1]建立資料</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="help2">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/help.png</normaloff>:/pic/icon/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>說明</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="about">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/information.png</normaloff>
+     <normalon>:/pic/icon/about.png</normalon>:/pic/icon/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>程式資訊</string>
+   </property>
+   <property name="toolTip">
+    <string>程式資訊</string>
+   </property>
+  </action>
+  <action name="controlz">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/key.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>必要欄位</string>
+   </property>
+   <property name="toolTip">
+    <string>必要欄位</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="exit2">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/quit.png</normaloff>:/pic/icon/quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>離開</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="modify">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/pen.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>更改</string>
+   </property>
+   <property name="toolTip">
+    <string>[u]修改資料</string>
+   </property>
+   <property name="shortcut">
+    <string>U</string>
+   </property>
+  </action>
+  <action name="delete_2">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/delete.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>刪除</string>
+   </property>
+   <property name="toolTip">
+    <string>[F2]刪除資料</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="reproduce">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/copy.png</normaloff>:/pic/icon/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>複製</string>
+   </property>
+   <property name="toolTip">
+    <string>[c]複製目前資料</string>
+   </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
+  </action>
+  <action name="invalid">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/garbage.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>無效</string>
+   </property>
+   <property name="toolTip">
+    <string>[x]使資料無效</string>
+   </property>
+   <property name="shortcut">
+    <string>X</string>
+   </property>
+  </action>
+  <action name="detail">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/prop.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>單身</string>
+   </property>
+   <property name="toolTip">
+    <string>[b]編輯單身資料</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
+   </property>
+  </action>
+  <action name="printer">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/printer.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>列印</string>
+   </property>
+   <property name="toolTip">
+    <string>[o]列印報表</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="exporttoexcel">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/export.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>匯出Excel</string>
+   </property>
+   <property name="toolTip">
+    <string>[e]單身匯出Excel</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+  </action>
+  <action name="query">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/filefind.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>查詢</string>
+   </property>
+   <property name="toolTip">
+    <string>[q]尋找資料</string>
+   </property>
+   <property name="shortcut">
+    <string>Q</string>
+   </property>
+  </action>
+  <action name="qbe_select">
+   <property name="icon">
+    <iconset resource="pyCode.qrc">
+     <normaloff>:/pic/icon/file_q.png</normaloff>
+     <normalon>:/pic/icon/filefind.png</normalon>:/pic/icon/file_q.png</iconset>
+   </property>
+   <property name="text">
+    <string>條件查詢</string>
+   </property>
+   <property name="toolTip">
+    <string>[Ctrl+Q]查詢條件列表</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="qbe_save">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/file_w.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>條件儲存</string>
+   </property>
+   <property name="toolTip">
+    <string>[Ctrl+W]查詢條件儲存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="first">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/gobegin.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>第一筆</string>
+   </property>
+   <property name="toolTip">
+    <string>[f]移到第一筆資料</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+  </action>
+  <action name="previous">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/prev.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>上筆</string>
+   </property>
+   <property name="toolTip">
+    <string>[p]移到上一筆資料</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="jump">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/balloon.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>指定筆</string>
+   </property>
+   <property name="toolTip">
+    <string>[j]移到指定筆數資料</string>
+   </property>
+   <property name="shortcut">
+    <string>J</string>
+   </property>
+  </action>
+  <action name="next">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/next.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>下筆</string>
+   </property>
+   <property name="toolTip">
+    <string>[n]移到下一筆資料</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="last">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/goend.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>末一筆</string>
+   </property>
+   <property name="toolTip">
+    <string>[l]移到最後一筆資料</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="key">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/key.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>必要欄位</string>
+   </property>
+   <property name="toolTip">
+    <string>[Ctrl+R]必須輸入的欄位清單</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/help.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>說明</string>
+   </property>
+   <property name="toolTip">
+    <string>[Ctrl+H]內容說明</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="exit">
+   <property name="icon">
+    <iconset>
+     <normalon>:/pic/icon/quit.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>離開</string>
+   </property>
+   <property name="toolTip">
+    <string>[Esc]離開程式</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>generate</tabstop>
+  <tabstop>download</tabstop>
+ </tabstops>
+ <resources>
+  <include location="pyCode.qrc"/>
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
