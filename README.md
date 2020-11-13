@@ -1,5 +1,5 @@
 # pybarcode
-我的python 第一支程式
+This is my first project on python develope tool
 - [x] This is a complete project
 - [ ] This is an incomplete project
 
